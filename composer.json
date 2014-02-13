@@ -1,0 +1,19 @@
+{
+    "name": "html24/mbtiles-generator",
+    "description": "Library for generating MBTiles files from different sources.",
+    "authors": [
+        {
+            "name": "Dennis Væversted",
+            "email": "dv@html24.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.10"
+    },
+    "autoload": {
+        "psr-0": {
+            "MBTilesGenerator": "src/"
+        }
+    }
+}
