@@ -9,6 +9,35 @@
 namespace MBTilesGenerator\TileSources;
 
 
-interface TileSourceInterface {
+use MBTilesGenerator\Exception\TileNotAvailableException;
+use MBTilesGenerator\Model\Tile;
 
+interface TileSourceInterface
+{
+
+    /**
+     * This method will be called before actually requesting single tiles.
+     *
+     * Use this to batch generate/download tiles.
+     * @param Tile[] $tiles
+     * @return void
+     */
+    public function cache($tiles);
+
+    /**
+     * For every tile needed, this function will be called
+     *
+     * Return the blob of this image
+     * @param Tile $tile
+     * @throws TileNotAvailableException
+     * @return string Blob of this image
+     */
+    public function getTile(Tile $tile);
+
+    /**
+     * Return the attribution text as HTML/text
+     *
+     * @return string
+     */
+    public function getAttribution();
 } 
