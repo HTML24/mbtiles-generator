@@ -40,4 +40,11 @@ interface TileSourceInterface
      * @return string
      */
     public function getAttribution();
+
+    /**
+     * Should return the format of the tiles, either 'jpg' or 'png'
+     *
+     * @return string
+     */
+    public function getFormat();
 } 

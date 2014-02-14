@@ -51,6 +51,12 @@ class RemoteCachingTileSource implements TileSourceInterface
     protected $maxRequests = 5;
 
     /**
+     * The format of the tiles, either jpg or png
+     * @var string
+     */
+    protected $format;
+
+    /**
      * @param string $url
      * @param string[] $subDomains
      */
@@ -69,6 +75,13 @@ class RemoteCachingTileSource implements TileSourceInterface
             }
         } else {
             $this->domains = array($url);
+        }
+
+        // Attempt to figure out the format, automatically. Fallback to jpg.
+        if (strtolower(substr($url, -3)) == 'png') {
+            $this->format = 'png';
+        } else {
+            $this->format = 'jpg';
         }
     }
 
@@ -230,7 +243,7 @@ class RemoteCachingTileSource implements TileSourceInterface
      */
     protected function tileDestination(Tile $tile)
     {
-        return $this->cacheDir . '/' . $tile->z . '/' . $tile->x . '/' . $tile->y . '.jpg';
+        return $this->cacheDir . '/' . $tile->z . '/' . $tile->x . '/' . $tile->y . '.' . $this->getFormat();
     }
 
     /**
@@ -309,6 +322,31 @@ class RemoteCachingTileSource implements TileSourceInterface
         }
 
         return file_get_contents($tile_path);
+    }
+
+    /**
+     * Should return the format of the tiles, either 'jpg' or 'png'
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    /**
+     * Manually override the format for this source.
+     * Either 'jpg' or 'png'
+     *
+     * @param string $format
+     * @throws
+     */
+    public function setFormat($format) {
+        if ($format === 'jpg' || $format === 'png') {
+            $this->format = $format;
+        } else {
+            throw new \Exception('Unknown format ' . $format . ' supplied');
+        }
     }
 
 

@@ -137,7 +137,7 @@ class MBTilesGenerator
         $mbtiles->addMeta('name', 'bla');
         $mbtiles->addMeta('type', 'baselayer');
         $mbtiles->addMeta('version', '1');
-        $mbtiles->addMeta('format', 'jpg');
+        $mbtiles->addMeta('format', $this->tileSource->getFormat());
         $mbtiles->addMeta('attribution', $this->tileSource->getAttribution());
 
         $mbtiles->addMeta('bounds', (string)$boundingBox);
