@@ -258,6 +258,7 @@ class RemoteCachingTileSource implements TileSourceInterface
             array(
                 CURLOPT_URL => $url,
                 CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_TIMEOUT => 10,
             )
         );
 
