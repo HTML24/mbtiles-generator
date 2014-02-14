@@ -10,7 +10,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.10",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*"
     },
     "autoload": {
         "psr-0": {
