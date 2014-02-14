@@ -108,6 +108,7 @@ class MBTilesGenerator
     /**
      * @param MBTileFile $mbtiles
      * @param Tile[] $tiles
+     * @throws
      */
     protected function addTilesToDB(MBTileFile $mbtiles, $tiles)
     {
@@ -122,7 +123,12 @@ class MBTilesGenerator
             }
         }
 
-        echo 'Failed on ' . $failed_tiles . " tiles\n";
+        $failed_percentage = ceil(($failed_tiles / count($tiles)) * 100);
+
+        if ($failed_percentage > $this->allowedFail) {
+            // Too many tiles failed
+            throw new \Exception($failed_percentage . '% of the tiles failed, which is more than the allowed ' . $this->allowedFail . '%');
+        }
     }
 
 
