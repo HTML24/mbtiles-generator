@@ -16,11 +16,25 @@ class MBTilesGenerator
      */
     protected $tileSource;
 
+    /**
+     * The maximum number of tiles we want in the file
+     * if the bounding box and zoom needs more than this
+     * the zoom will be stepped down, until we are within this limit.
+     * @var int
+     */
     protected $tileLimit = 2000;
 
+    /**
+     * The zoom we are aiming for
+     * @var int
+     */
     protected $maxZoom = 18;
 
-    protected $effectiveZoom = 0;
+    /**
+     * The last actual zoom accomplished
+     * @var int
+     */
+    protected $effectiveZoom = -1;
 
     /**
      * How many percentage of the tiles are allowed to fail,
@@ -65,6 +79,30 @@ class MBTilesGenerator
         // Add tiles to the database
         $this->addTilesToDB($mbtiles, $tiles);
 
+    }
+
+    /**
+     * Set maximum zoom on this instance, defaults to 18.
+     * @param int $zoom
+     */
+    public function setMaxZoom($zoom) {
+        $this->maxZoom = $zoom;
+    }
+
+    /**
+     * Sets the allowed failures
+     * @param $allowedFail
+     */
+    public function setAllowedFail($allowedFail) {
+        $this->allowedFail = $allowedFail;
+    }
+
+    /**
+     * Returns the effective zoom we accomplished on last run.
+     * @return int
+     */
+    public function getEffectiveZoom() {
+        return $this->effectiveZoom;
     }
 
     /**
