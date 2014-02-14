@@ -179,9 +179,12 @@ class RemoteCachingTileSource implements TileSourceInterface
             }
 
             $request = $this->active_requests[$ch_array_key];
+            $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-            if (curl_errno($ch) > 0) {
+            if ($info['result'] !== CURLE_OK) {
                 echo 'Error on tile: ' . $request['url'] . ' - ' . curl_error($ch) . "\n";
+            } else if ($status != 200) {
+                echo 'Error on tile: ' . $request['url'] . ' - HTTP Status: ' . $status . "\n";
             } else {
                 // Create destination
                 static::createPath($request['destination'], true);
