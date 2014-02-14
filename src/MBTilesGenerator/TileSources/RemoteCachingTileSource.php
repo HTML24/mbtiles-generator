@@ -195,9 +195,9 @@ class RemoteCachingTileSource implements TileSourceInterface
             $status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
             if ($info['result'] !== CURLE_OK) {
-                echo 'Error on tile: ' . $request['url'] . ' - ' . curl_error($ch) . "\n";
+                //echo 'Error on tile: ' . $request['url'] . ' - ' . curl_error($ch) . "\n";
             } else if ($status != 200) {
-                echo 'Error on tile: ' . $request['url'] . ' - HTTP Status: ' . $status . "\n";
+                //echo 'Error on tile: ' . $request['url'] . ' - HTTP Status: ' . $status . "\n";
             } else {
                 // Create destination
                 static::createPath($request['destination'], true);
@@ -223,7 +223,7 @@ class RemoteCachingTileSource implements TileSourceInterface
 
         // Check if we already have the tile in cache
         if (file_exists($tile_destination)) {
-            echo 'Cache hit for tile: ' . $tile->z . '/' . $tile->x . '/' . $tile->y . "\n";
+            //echo 'Cache hit for tile: ' . $tile->z . '/' . $tile->x . '/' . $tile->y . "\n";
 
             return;
         }
@@ -234,7 +234,7 @@ class RemoteCachingTileSource implements TileSourceInterface
             'destination' => $this->tileDestination($tile),
         );
 
-        echo 'Cache miss for tile: ' . $tile->z . '/' . $tile->x . '/' . $tile->y . "\n";
+        //echo 'Cache miss for tile: ' . $tile->z . '/' . $tile->x . '/' . $tile->y . "\n";
     }
 
     /**
