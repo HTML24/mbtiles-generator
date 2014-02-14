@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-namespace MBTilesGenerator\Core;
+namespace HTML24\MBTilesGenerator\Core;
 
 
 class MBTileFile

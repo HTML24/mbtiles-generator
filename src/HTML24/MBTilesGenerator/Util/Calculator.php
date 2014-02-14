@@ -6,7 +6,7 @@
  * Time: 12:58
  */
 
-namespace MBTilesGenerator\Util;
+namespace HTML24\MBTilesGenerator\Util;
 
 
 class Calculator

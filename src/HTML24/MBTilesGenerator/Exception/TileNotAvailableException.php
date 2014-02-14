@@ -6,7 +6,7 @@
  * Time: 16:13
  */
 
-namespace MBTilesGenerator\Exception;
+namespace HTML24\MBTilesGenerator\Exception;
 
 /** *
  * Class TileNotAvailableException

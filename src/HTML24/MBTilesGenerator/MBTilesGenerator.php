@@ -1,13 +1,13 @@
 <?php
 
-namespace MBTilesGenerator;
+namespace HTML24\MBTilesGenerator;
 
-use MBTilesGenerator\Core\MBTileFile;
-use MBTilesGenerator\Exception\TileNotAvailableException;
-use MBTilesGenerator\TileSources\TileSourceInterface;
-use MBTilesGenerator\Model\BoundingBox;
-use MBTilesGenerator\Util\Calculator;
-use MBTilesGenerator\Model\Tile;
+use HTML24\MBTilesGenerator\Core\MBTileFile;
+use HTML24\MBTilesGenerator\Exception\TileNotAvailableException;
+use HTML24\MBTilesGenerator\TileSources\TileSourceInterface;
+use HTML24\MBTilesGenerator\Model\BoundingBox;
+use HTML24\MBTilesGenerator\Util\Calculator;
+use HTML24\MBTilesGenerator\Model\Tile;
 
 class MBTilesGenerator
 {

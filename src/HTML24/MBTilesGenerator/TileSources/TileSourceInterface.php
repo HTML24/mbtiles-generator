@@ -6,11 +6,11 @@
  * Time: 10:34
  */
 
-namespace MBTilesGenerator\TileSources;
+namespace HTML24\MBTilesGenerator\TileSources;
 
 
-use MBTilesGenerator\Exception\TileNotAvailableException;
-use MBTilesGenerator\Model\Tile;
+use HTML24\MBTilesGenerator\Exception\TileNotAvailableException;
+use HTML24\MBTilesGenerator\Model\Tile;
 
 interface TileSourceInterface
 {

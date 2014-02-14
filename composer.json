@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-0": {
-            "MBTilesGenerator": "src/"
+            "HTML24\\MBTilesGenerator": "src/"
         }
     }
 }

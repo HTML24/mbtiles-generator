@@ -6,12 +6,12 @@
  * Time: 10:49
  */
 
-namespace MBTilesGenerator\TileSources;
+namespace HTML24\MBTilesGenerator\TileSources;
 
 
-use MBTilesGenerator\Exception\TileNotAvailableException;
-use MBTilesGenerator\Model\Tile;
-use MBTilesGenerator\Util\Calculator;
+use HTML24\MBTilesGenerator\Exception\TileNotAvailableException;
+use HTML24\MBTilesGenerator\Model\Tile;
+use HTML24\MBTilesGenerator\Util\Calculator;
 
 class RemoteCachingTileSource implements TileSourceInterface
 {

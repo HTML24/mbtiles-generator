@@ -6,7 +6,7 @@
  * Time: 11:31
  */
 
-namespace MBTilesGenerator\Model;
+namespace HTML24\MBTilesGenerator\Model;
 
 
 class Tile

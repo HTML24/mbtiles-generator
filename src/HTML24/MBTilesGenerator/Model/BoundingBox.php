@@ -6,7 +6,7 @@
  * Time: 10:56
  */
 
-namespace MBTilesGenerator\Model;
+namespace HTML24\MBTilesGenerator\Model;
 
 
 class BoundingBox

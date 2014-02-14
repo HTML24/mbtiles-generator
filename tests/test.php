@@ -8,9 +8,9 @@
 
 require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
 
-use MBTilesGenerator\MBTilesGenerator;
-use MBTilesGenerator\TileSources\RemoteCachingTileSource;
-use MBTilesGenerator\Model\BoundingBox;
+use HTML24\MBTilesGenerator\MBTilesGenerator;
+use HTML24\MBTilesGenerator\TileSources\RemoteCachingTileSource;
+use HTML24\MBTilesGenerator\Model\BoundingBox;
 
 $tile_source = new RemoteCachingTileSource('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', array(1,2,3,4));
 $tile_source->setAttribution('Data, imagery and map information provided by MapQuest, OpenStreetMap <http://www.openstreetmap.org/copyright> and contributors, ODbL <http://wiki.openstreetmap.org/wiki/Legal_FAQ#I_would_like_to_use_OpenStreetMap_maps._How_should_I_credit_you.#>.');
