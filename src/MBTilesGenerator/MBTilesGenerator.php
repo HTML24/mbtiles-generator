@@ -57,11 +57,12 @@ class MBTilesGenerator
      *
      * @param BoundingBox $boundingBox
      * @param string $destination File destination to write the mbtiles file to
+     * @param string $name
      *
      * @throws
      * @return bool
      */
-    public function generate(BoundingBox $boundingBox, $destination)
+    public function generate(BoundingBox $boundingBox, $destination, $name = 'mbtiles-generator')
     {
         if (file_exists($destination)) {
             throw new \Exception('Destination file already exists');
@@ -74,7 +75,7 @@ class MBTilesGenerator
         $mbtiles = new MBTileFile($destination);
 
         // Set the required meta data
-        $this->addMetaDataToDB($mbtiles, $boundingBox);
+        $this->addMetaDataToDB($mbtiles, $boundingBox, $name);
 
         // Add tiles to the database
         $this->addTilesToDB($mbtiles, $tiles);
@@ -131,10 +132,14 @@ class MBTilesGenerator
         }
     }
 
-
-    protected function addMetaDataToDB(MBTileFile $mbtiles, BoundingBox $boundingBox)
+    /**
+     * @param MBTileFile $mbtiles
+     * @param BoundingBox $boundingBox
+     * @param string $name
+     */
+    protected function addMetaDataToDB(MBTileFile $mbtiles, BoundingBox $boundingBox, $name)
     {
-        $mbtiles->addMeta('name', 'bla');
+        $mbtiles->addMeta('name', $name);
         $mbtiles->addMeta('type', 'baselayer');
         $mbtiles->addMeta('version', '1');
         $mbtiles->addMeta('format', $this->tileSource->getFormat());
