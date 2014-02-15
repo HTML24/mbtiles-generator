@@ -19,4 +19,4 @@ This library's output has been tested for usage with [Nutiteq 3D Android mapping
 
 ## Documentation
 
-Read the documentation [here](https://bitbucket.org/HTML24DK/mbtiles-generator/src/master/docs/index.rst) or look at the examples in [tests](https://bitbucket.org/HTML24DK/mbtiles-generator/src/master/tests/)
+Read the documentation [here](https://bitbucket.org/HTML24DK/mbtiles-generator/src/master/docs/index.md) or look at the examples in [tests](https://bitbucket.org/HTML24DK/mbtiles-generator/src/master/tests/)
