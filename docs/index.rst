@@ -4,7 +4,7 @@ Welcome to MBTilesGenerator's documentation!
 Installation
 ------------
 
-.. code-block:: console
+.. code:: console
 
     composer require html24/mbtiles-generator dev-master
 
@@ -14,7 +14,7 @@ Usage
 This example code will download the tiles necessary for a small area in Copenhagen, Denmark and output a
 mbtiles file as output.mbtiles.
 
-.. code-block:: php
+.. code:: php
     <?php
     use HTML24\MBTilesGenerator\MBTilesGenerator;
     use HTML24\MBTilesGenerator\TileSources\RemoteCachingTileSource;
