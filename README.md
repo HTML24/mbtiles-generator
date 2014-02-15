@@ -42,3 +42,7 @@ mbtiles file as output.mbtiles.
     $tile_generator->setMaxZoom(18);
     $tile_generator->generate($bounding_box, 'output.mbtiles');
 
+
+## License
+
+This library is released under the BSD (3-clause) License, please see LICENSE for details.

@@ -1,9 +1,6 @@
 <?php
 /**
  * Created by HTML24 ApS.
- * User: dennis
- * Date: 2014-02-13
- * Time: 15:30
  */
 
 namespace HTML24\MBTilesGenerator\Core;

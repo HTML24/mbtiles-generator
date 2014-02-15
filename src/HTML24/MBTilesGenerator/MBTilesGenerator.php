@@ -1,4 +1,7 @@
 <?php
+/**
+ * Created by HTML24 ApS.
+ */
 
 namespace HTML24\MBTilesGenerator;
 

@@ -1,9 +1,6 @@
 <?php
 /**
  * Created by HTML24 ApS.
- * User: dennis
- * Date: 2014-02-15
- * Time: 21:29
  */
 
 namespace HTML24\MBTilesGenerator\TileSources;

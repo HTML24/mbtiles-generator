@@ -1,6 +1,7 @@
 {
     "name": "html24/mbtiles-generator",
     "description": "Library for generating MBTiles files from different sources.",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Dennis Væversted",
