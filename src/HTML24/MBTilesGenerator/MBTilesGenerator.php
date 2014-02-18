@@ -183,14 +183,14 @@ class MBTilesGenerator
     {
         $tiles = array();
         $start_tile = $this->coordinatesToTile(
-            $boundingBox->getTopLeftLongitude(),
-            $boundingBox->getTopLeftLatitude(),
+            $boundingBox->getLeft(),
+            $boundingBox->getBottom(),
             $zoom
         );
 
         $end_tile = $this->coordinatesToTile(
-            $boundingBox->getBottomRightLongitude(),
-            $boundingBox->getBottomRightLatitude(),
+            $boundingBox->getRight(),
+            $boundingBox->getTop(),
             $zoom
         );
 

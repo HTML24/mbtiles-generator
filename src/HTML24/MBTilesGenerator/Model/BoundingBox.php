@@ -9,24 +9,28 @@ namespace HTML24\MBTilesGenerator\Model;
 class BoundingBox
 {
     /**
+     * Latitude of top
      * @var float
      */
-    protected $top_left_latitude;
+    protected $top;
     /**
+     * Longitude of left
      * @var float
      */
-    protected $top_left_longitude;
+    protected $left;
     /**
+     * Latitude of bottom
      * @var float
      */
-    protected $bottom_right_latitude;
+    protected $bottom;
     /**
+     * Longitude of right
      * @var float
      */
-    protected $bottom_right_longitude;
+    protected $right;
 
     /**
-     * @param string $bounds
+     * @param string $bounds as: "left, bottom, right, top"
      *
      * @throws \Exception
      */
@@ -37,10 +41,10 @@ class BoundingBox
             if (count($coordinates) !== 4) {
                 throw new \Exception('Invalid $bounds input');
             }
-            $this->top_left_longitude = floatval($coordinates[0]);
-            $this->top_left_latitude = floatval($coordinates[1]);
-            $this->bottom_right_longitude = floatval($coordinates[2]);
-            $this->bottom_right_latitude = floatval($coordinates[3]);
+            $this->left = floatval($coordinates[0]);
+            $this->bottom = floatval($coordinates[1]);
+            $this->right = floatval($coordinates[2]);
+            $this->top = floatval($coordinates[3]);
         }
     }
 
@@ -49,71 +53,73 @@ class BoundingBox
      */
     public function __toString()
     {
-        return $this->top_left_longitude . ',' . $this->top_left_latitude . ',' . $this->bottom_right_longitude . ',' . $this->bottom_right_latitude;
+        return $this->left . ',' . $this->bottom . ',' . $this->right . ',' . $this->top;
     }
 
     /**
-     * @param float $bottom_right_latitude
+     * @param float $bottom
      */
-    public function setBottomRightLatitude($bottom_right_latitude)
+    public function setBottom($bottom)
     {
-        $this->bottom_right_latitude = $bottom_right_latitude;
-    }
-
-    /**
-     * @return float
-     */
-    public function getBottomRightLatitude()
-    {
-        return $this->bottom_right_latitude;
-    }
-
-    /**
-     * @param float $bottom_right_longitude
-     */
-    public function setBottomRightLongitude($bottom_right_longitude)
-    {
-        $this->bottom_right_longitude = $bottom_right_longitude;
+        $this->bottom = $bottom;
     }
 
     /**
      * @return float
      */
-    public function getBottomRightLongitude()
+    public function getBottom()
     {
-        return $this->bottom_right_longitude;
+        return $this->bottom;
     }
 
     /**
-     * @param float $top_left_latitude
+     * @param float $left
      */
-    public function setTopLeftLatitude($top_left_latitude)
+    public function setLeft($left)
     {
-        $this->top_left_latitude = $top_left_latitude;
-    }
-
-    /**
-     * @return float
-     */
-    public function getTopLeftLatitude()
-    {
-        return $this->top_left_latitude;
-    }
-
-    /**
-     * @param float $top_left_longitude
-     */
-    public function setTopLeftLongitude($top_left_longitude)
-    {
-        $this->top_left_longitude = $top_left_longitude;
+        $this->left = $left;
     }
 
     /**
      * @return float
      */
-    public function getTopLeftLongitude()
+    public function getLeft()
     {
-        return $this->top_left_longitude;
+        return $this->left;
     }
+
+    /**
+     * @param float $right
+     */
+    public function setRight($right)
+    {
+        $this->right = $right;
+    }
+
+    /**
+     * @return float
+     */
+    public function getRight()
+    {
+        return $this->right;
+    }
+
+    /**
+     * @param float $top
+     */
+    public function setTop($top)
+    {
+        $this->top = $top;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTop()
+    {
+        return $this->top;
+    }
+
+
 
 }
