@@ -56,10 +56,14 @@ class RemoteCachingTileSource implements TileSourceInterface
     /**
      * @param string $url
      * @param string[] $subDomains
+     * @param string $temporary_folder
      */
-    public function __construct($url, $subDomains = null)
+    public function __construct($url, $subDomains = null, $temporary_folder = null)
     {
-        $this->cacheDir = sys_get_temp_dir() . '/mbtiles-generator/' . preg_replace(
+        if ($temporary_folder === null) {
+            $temporary_folder = sys_get_temp_dir();
+        }
+        $this->cacheDir = $temporary_folder . '/mbtiles-generator/' . preg_replace(
                 array('/\s/', '/\.[\.]+/', '/[^\w_\.\-]/'),
                 array('_', '.', '_'),
                 $url
